@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>Peter Agbanobi</title>
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/theme.css') }}" type="text/css"/>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>    
+        <script src="https://getbootstrap.com/assets/js/vendor/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    </head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <body>
+                <div class="card-header text-center" style ="background-color:rgb(255, 0, 47);">
+                  <h1> THE STUDENT INFORMATION PAGE</h1>
+                </div>
+                 <div class="card-header text-center">
+                        <table>
+                            <h1> STUDENT DETAILS</h1>
+                            {% for val in ji_student %}
+                              Student id : {{ val.student_id}}<br>
+                              Surname : {{ val.surname }}<br>
+                              First name is: {{ val.firstName}}<br>
+                             {% endfor %}
+                        </table> 
+                        <div class="card-header text-center">
+                            <table>
+                                <h1> MOODLE</h1>
+                                   {% for val in ji_moodle %}
+                                    moodle id : {{ val.moodle_id}}<br>
+                                    Moodle Name : {{ val.moodleName }}<br> 
+                                 {% endfor %}
+                            </table>                           
+                       </div>
+                          <div class='form'>
+                            <form method='POST' action=''> 
+                               <div class="form-group">
+                                <a href="{{url_for('start') }}"> <br>EXIT THIS PAGE</a>
+                             </div>   
+                             </div>
+                           </form>
+                        </div>      
+    </body>
+</html>
